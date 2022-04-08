@@ -114,7 +114,8 @@ public class IntakeArm extends SubsystemBase {
 
     // Send setpoint to offboard controller PID
     double feedforward = m_feedforward.calculate(m_setpoint.position, m_setpoint.velocity);
-    m_pidController.setReference(m_setpoint.position * IntakeArmConstants.kArmDegToNeoRotConversionFactor, 
-      ControlType.kPosition, m_pidSlot, feedforward, ArbFFUnits.kVoltage);
+    System.out.println("setpoint position = " + m_setpoint.position + ", feedforward = " + feedforward);
+    // m_pidController.setReference(m_setpoint.position * IntakeArmConstants.kArmDegToNeoRotConversionFactor, 
+    //   ControlType.kPosition, m_pidSlot, feedforward, ArbFFUnits.kVoltage);
   }
 }
